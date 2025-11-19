@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-jet-black: #30343fff;
+  --color-ghost-white: #fafaffff;
+  --color-periwinkle: #e4d9ffff;
+  --color-twilight-indigo: #273469ff;
+  --color-space-indigo: #1e2749ff;
+  --color-prussian-blue: #0b132bff;
+  --color-space-indigo: #1c2541ff;
+  --color-dusk-blue: #3a506bff;
+  --color-tropical-teal: #5bc0beff;
+  --color-neon-ice: #6fffe9ff;
+  --color-deep-space-blue: #153243ff;
+  --color-stormy-teal: #2d6975ff;
+  --color-tropical-teal: #00adb5ff;
+  --color-electric-aqua: #88ececff;
+  --color-azure-mist: #ebfffcff;
+}
