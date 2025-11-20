@@ -18,4 +18,12 @@
   --color-tropical-teal: #00adb5ff;
   --color-electric-aqua: #88ececff;
   --color-azure-mist: #ebfffcff;
+
+  --font-PTsans: "PT", sans-serif;
+}
+
+@layer components {
+  body {
+    @apply font-PTsans;
+  }
 }
