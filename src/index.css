@@ -27,3 +27,7 @@
     @apply font-PTsans bg-space-indigo;
   }
 }
+
+@utility subtitle {
+  @apply text-center text-ghost-white;
+}
