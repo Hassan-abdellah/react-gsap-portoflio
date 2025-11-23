@@ -11,8 +11,4 @@ export const navbarLinks = [
     label: "Gallery",
     id: "gallery",
   },
-  {
-    label: "Contact Me",
-    id: "contact",
-  },
 ];
