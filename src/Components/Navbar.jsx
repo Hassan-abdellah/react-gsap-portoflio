@@ -20,7 +20,7 @@ const Navbar = () => {
     });
   });
   return (
-    <header className="text-ghost-white mx-2 mt-2 rounded-2xl transition-all duration-150 sticky top-2 left-0 right-0">
+    <header className="text-ghost-white mx-2 mt-2 rounded-2xl transition-all duration-150 sticky top-2 left-0 right-0 z-50 backdrop-blur-3xl">
       <nav className="py-4 px-4 flex items-center justify-between">
         {/* logo */}
         <div>HA</div>
