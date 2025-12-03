@@ -142,9 +142,13 @@ const Hero = () => {
     { scope: aboutContainer }
   );
   return (
-    <section id="about" ref={aboutContainer} className="my-10 mx-6 flex ">
+    <section
+      id="about"
+      ref={aboutContainer}
+      className="my-10 mx-6 flex xl:flex-row xl:gap-0 gap-10 flex-col"
+    >
       {/* left side */}
-      <div className="flex flex-col justify-between gap-20 pt-20 pr-10 flex-1">
+      <div className="flex xl:flex-col lg:flex-row flex-col lg:justify-between xl:gap-0 gap-10 pt-20 pr-10 flex-1">
         {/* Top Left Section */}
         <div>
           <h1 className="text-tropical-teal text-4xl mb-4" id="name">
@@ -183,13 +187,13 @@ const Hero = () => {
       {/* hero image */}
       <div
         id="img-container"
-        className="bg-[#3a506b]/10 w-200 h-150 rounded-xl"
+        className="bg-[#3a506b]/10 lg:w-200 w-[calc(100%-5px)] h-150 rounded-xl xl:mx-0 mx-auto"
       >
-        <img src={HeroImg} alt="Me" className="w-200 h-150 object-cover" />
+        <img src={HeroImg} alt="Me" className="w-full h-full object-cover" />
       </div>
 
       {/* right side */}
-      <div className="flex flex-col justify-between gap-20 pl-10 pt-20 flex-1">
+      <div className="flex xl:flex-col lg:flex-row flex-col lg:justify-between xl:gap-0 gap-10 pt-20 xl:pl-10 pl-0 flex-1">
         {/* Top Right Section */}
         <div>
           <p
