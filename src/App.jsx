@@ -4,8 +4,9 @@ import Hero from "./Sections/Hero";
 import Skills from "./Sections/Skills";
 import { SplitText } from "gsap/SplitText";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(SplitText, ScrollSmoother);
+gsap.registerPlugin(SplitText, ScrollSmoother, ScrollTrigger);
 
 // create the scrollSmoother before your scrollTriggers
 ScrollSmoother.create({
