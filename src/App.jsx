@@ -3,20 +3,22 @@ import Navbar from "./Components/Navbar";
 import Hero from "./Sections/Hero";
 import Skills from "./Sections/Skills";
 import { SplitText } from "gsap/SplitText";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
 
-gsap.registerPlugin(SplitText, ScrollSmoother, ScrollTrigger);
-
-// create the scrollSmoother before your scrollTriggers
-ScrollSmoother.create({
-  smooth: 1.5, // how long (in seconds) it takes to "catch up" to the native scroll position
-  effects: true, // looks for data-speed and data-lag attributes on elements
-  smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-  normalizeScroll: true, // prevents weird iOS/overscroll bounce effects
-});
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const App = () => {
+  // Initialize Lenis
+  const lenis = new Lenis({
+    autoRaf: true,
+  });
+
+  // Listen for the scroll event and log the event data
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
+
   return (
     <main>
       <Navbar />

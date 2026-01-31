@@ -21,7 +21,7 @@ const Hero = () => {
           opacity: 0,
           duration: 0.2,
         },
-        "-=0.1"
+        "-=0.1",
       )
       .from(
         "#csv-button svg",
@@ -30,7 +30,7 @@ const Hero = () => {
           opacity: 0,
           duration: 0.2,
         },
-        "-=0.1"
+        "-=0.1",
       );
   };
   // contact Me button hover animation
@@ -76,7 +76,7 @@ const Hero = () => {
           clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
           duration: 1.5,
           ease: "power2.outIn",
-        }
+        },
       );
       gsap.from("#img-container img", {
         scale: 1.5,
@@ -139,7 +139,7 @@ const Hero = () => {
           ease: "elastic.inOut",
         });
     },
-    { scope: aboutContainer }
+    { scope: aboutContainer },
   );
   return (
     <section
