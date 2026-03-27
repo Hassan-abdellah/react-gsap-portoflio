@@ -1,24 +1,24 @@
-import gsap from "gsap";
+// import gsap from "gsap";
 import { navbarLinks } from "../constants";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(() => {
-    gsap.to("header", {
-      marginLeft: "60px",
-      marginRight: "60px",
-      borderRadius: "50px",
-      ease: "power4.inOut",
-      scrollTrigger: {
-        trigger: "header",
-        start: "350px top",
-        scrub: 1,
-      },
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.to("header", {
+  //     marginLeft: "60px",
+  //     marginRight: "60px",
+  //     borderRadius: "50px",
+  //     ease: "power4.inOut",
+  //     scrollTrigger: {
+  //       trigger: "header",
+  //       start: "350px top",
+  //       scrub: 1,
+  //     },
+  //   });
+  // });
   return (
     <header className="text-ghost-white mx-2 mt-2 rounded-2xl transition-all duration-150 sticky top-2 left-0 right-0 z-50 backdrop-blur-3xl">
       <nav className="py-4 px-4 flex items-center justify-between">
