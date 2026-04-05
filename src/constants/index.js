@@ -47,3 +47,16 @@ export const skills = [
     icon: "/images/skills/chakraui.svg",
   },
 ];
+
+export const socialLinks = [
+  {
+    name: "Github",
+    icon: "/images/links/github-svg.svg",
+    href: "https://github.com",
+  },
+  {
+    name: "LinkedIn",
+    icon: "/images/links/linkedin-svg.svg",
+    href: "https://linkedin.com",
+  },
+];
