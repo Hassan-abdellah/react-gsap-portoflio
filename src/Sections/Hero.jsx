@@ -63,9 +63,9 @@ const Hero = () => {
       const split = SplitText.create("li", {
         type: "chars",
       });
-      const split2 = SplitText.create("#name", {
-        type: "chars",
-      });
+      // const split2 = SplitText.create("#name", {
+      //   type: "chars",
+      // });
 
       // image animation
       gsap.fromTo(
@@ -75,7 +75,7 @@ const Hero = () => {
         },
         {
           clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-          duration: 1.5,
+          duration: 1.2,
           ease: "power2.outIn",
         },
       );
@@ -83,7 +83,7 @@ const Hero = () => {
         scale: 1.5,
         opacity: 0,
         duration: 1,
-        delay: 1.5,
+        delay: 1.2,
         ease: "power2.outIn",
       });
 
@@ -208,7 +208,7 @@ const Hero = () => {
       {/* hero image */}
       <div
         id="img-container"
-        className="bg-[#3a506b]/10 lg:w-200 w-[calc(100%-5px)] h-150 rounded-xl xl:mx-0 mx-auto"
+        className="bg-[#3a506b]/10 lg:w-150 w-[calc(100%-5px)] h-150 rounded-xl xl:mx-0 mx-auto perspective-[1000px]"
       >
         <img src={HeroImg} alt="Me" className="w-full h-full object-cover" />
       </div>
