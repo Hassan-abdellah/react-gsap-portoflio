@@ -5,6 +5,7 @@ import { SplitText } from "gsap/SplitText";
 import ScrollDownSvg from "../Components/ScrollDownSvg";
 import FileDownloadSvg from "../Components/FileDownloadSvg";
 import { useRef } from "react";
+import { CSSRulePlugin } from "gsap/all";
 const Hero = () => {
   const aboutContainer = useRef(null);
   // Download CSV button hover animation
@@ -86,17 +87,30 @@ const Hero = () => {
         ease: "power2.outIn",
       });
 
-      tl.from(split2.chars, {
-        opacity: 0,
-        y: 10,
-        stagger: 0.05,
-        ease: "power2.inOut",
-      }).from(split.chars, {
-        opacity: 0,
-        y: 10,
-        stagger: 0.08,
-        ease: "power2.inOut",
-      });
+      tl.fromTo(
+        "#after",
+        {
+          scaleX: 1,
+          transformOrigin: "0 100%",
+        },
+        {
+          scaleX: 0,
+          transformOrigin: "100% 100%",
+          ease: "elastic.out",
+        },
+      )
+        // .from(split2.chars, {
+        //   opacity: 0,
+        //   y: 10,
+        //   stagger: 0.05,
+        //   ease: "power2.inOut",
+        // })
+        .from(split.chars, {
+          opacity: 0,
+          y: 10,
+          stagger: 0.08,
+          ease: "power2.inOut",
+        });
 
       // timeline 2 of left side bottom
       tl2
@@ -151,9 +165,16 @@ const Hero = () => {
       <div className="flex xl:flex-col lg:flex-row flex-col lg:justify-between xl:gap-0 gap-10 pt-20 pr-10 flex-1">
         {/* Top Left Section */}
         <div>
-          <h1 className="text-tropical-teal text-4xl mb-4" id="name">
-            Hassan Abdellah
-          </h1>
+          <div className="relative">
+            <h1 className="text-tropical-teal text-4xl mb-4" id="name">
+              Hassan Abdellah
+            </h1>
+
+            <div
+              id="after"
+              className="absolute inset-0 h-full w-full bg-white transition-transform duration-300"
+            />
+          </div>
           <ul>
             {["Web Devloper", "Web Designer", "UI / UX"].map((item, index) => (
               <li key={index} className="text-ghost-white">
