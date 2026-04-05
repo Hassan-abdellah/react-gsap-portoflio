@@ -5,6 +5,7 @@ import Skills from "./Sections/Skills";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+import Footer from "./Components/Footer";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -24,6 +25,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Skills />
+      <Footer />
     </main>
   );
 };

@@ -20,11 +20,11 @@ const Navbar = () => {
   //   });
   // });
   return (
-    <header className="text-ghost-white mx-2 mt-2 rounded-2xl transition-all duration-150 sticky top-2 left-0 right-0 z-50 backdrop-blur-3xl">
+    <header className="text-ghost-white mx-2 mt-2 sm:rounded-2xl rounded-[50px] transition-all duration-150 sticky top-2 left-0 right-0 z-50 backdrop-blur-3xl">
       <nav className="py-4 px-4 flex items-center justify-between">
         {/* logo */}
         <div>HA</div>
-        <ul className="flex items-center gap-6">
+        <ul className="items-center gap-6 hidden sm:flex">
           {navbarLinks.map((item) => (
             <li key={item.id}>
               <a
@@ -40,7 +40,7 @@ const Navbar = () => {
         <button
           type="button"
           aria-label="Contact Me"
-          className="bg-tropical-teal text-ghost-white  cursor-pointer px-4 py-2 rounded-lg overflow-hidden relative after:rounded-lg after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:w-full after:h-ful after:bg-ghost-white after:opacity-30 after:transition after:duration-300 after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:origin-bottom-right"
+          className="bg-tropical-teal text-ghost-white  cursor-pointer px-4 py-2 rounded-lg overflow-hidden relative after:rounded-lg after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:w-full after:h-ful after:bg-ghost-white after:opacity-30 after:transition after:duration-300 after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:origin-bottom-right hidden sm:block"
         >
           Contact Me
         </button>
