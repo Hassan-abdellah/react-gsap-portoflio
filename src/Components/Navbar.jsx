@@ -1,5 +1,6 @@
 // import gsap from "gsap";
 import { navbarLinks } from "../constants";
+import MobileNavigationMenu from "./MobileNavigationMenu";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import { useGSAP } from "@gsap/react";
 
@@ -44,6 +45,9 @@ const Navbar = () => {
         >
           Contact Me
         </button>
+
+        {/* mobile menu */}
+        <MobileNavigationMenu />
       </nav>
     </header>
   );
