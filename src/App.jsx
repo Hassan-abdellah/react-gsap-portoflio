@@ -6,6 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import Footer from "./Components/Footer";
+import ContactSection from "./Sections/ContactSection";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -25,6 +26,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Skills />
+      <ContactSection />
       <Footer />
     </main>
   );
