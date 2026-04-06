@@ -32,13 +32,14 @@ const MobileNavigationMenu = () => {
               ))}
             </ul>
 
-            <button
-              type="button"
+            <a
+              href="#contact"
               aria-label="Contact Me"
               className="bg-twilight-indigo text-ghost-white  cursor-pointer px-4 py-2 rounded-lg overflow-hidden relative after:rounded-lg after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:w-full after:h-ful after:bg-ghost-white after:opacity-30 after:transition after:duration-300 after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:origin-bottom-right"
+              onClick={() => setIsOpen(false)}
             >
               Contact Me
-            </button>
+            </a>
           </SheetContent>
         </Sheet>
       )}
