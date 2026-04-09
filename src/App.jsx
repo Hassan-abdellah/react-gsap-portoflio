@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import Footer from "./Components/Footer";
 import ContactSection from "./Sections/ContactSection";
+import Showcase from "./Sections/Showcase";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -18,7 +19,7 @@ const App = () => {
 
   // Listen for the scroll event and log the event data
   lenis.on("scroll", (e) => {
-    console.log(e);
+    // console.log(e);
   });
 
   return (
@@ -26,6 +27,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Skills />
+      <Showcase />
       <ContactSection />
       <Footer />
     </main>

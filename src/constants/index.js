@@ -60,3 +60,57 @@ export const socialLinks = [
     href: "https://linkedin.com",
   },
 ];
+
+export const projects = [
+  {
+    id: "p1",
+    name: "Expense Tracker",
+    image: "/images/projects/expense-tracker.jpg",
+    githubURL: "https://github.com/Hassan-abdellah",
+    websiteURL: "https://github.com/Hassan-abdellah",
+  },
+  {
+    id: "p2",
+    name: "Expense Tracker",
+    image: "/images/projects/expense-tracker.jpg",
+    githubURL: "https://github.com/Hassan-abdellah",
+    websiteURL: "https://github.com/Hassan-abdellah",
+  },
+  {
+    id: "p3",
+    name: "Expense Tracker",
+    image: "/images/projects/expense-tracker.jpg",
+    githubURL: "https://github.com/Hassan-abdellah",
+    websiteURL: "https://github.com/Hassan-abdellah",
+  },
+  {
+    id: "p4",
+    name: "Expense Tracker",
+    image: "/images/projects/expense-tracker.jpg",
+    githubURL: "https://github.com/Hassan-abdellah",
+    websiteURL: "https://github.com/Hassan-abdellah",
+  },
+];
+
+export const showcaseImgPositions = [
+  {
+    id: "p1",
+    from: { left: "-20%", top: "-20%", opacity: 0 }, // off-screen top-left
+    to: { left: "3%", top: "-5%", opacity: 1 },
+  },
+  {
+    id: "p2",
+    from: { right: "-20%", top: "-20%", opacity: 0 }, // off-screen top-right
+    to: { right: "3%", top: "-5%", opacity: 1 },
+  },
+  {
+    id: "p3",
+    from: { left: "-20%", bottom: "-20%", opacity: 0 }, // off-screen bottom-left
+    to: { left: "3%", bottom: "-5%", opacity: 1 },
+  },
+  {
+    id: "p4",
+    from: { right: "-20%", bottom: "-20%", opacity: 0 }, // off-screen bottom-right
+    to: { right: "3%", bottom: "-5%", opacity: 1 },
+  },
+];
