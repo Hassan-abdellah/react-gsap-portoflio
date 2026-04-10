@@ -1,16 +1,19 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Mackbook from "@/assets/mackbook-screen.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import clsx from "clsx";
-import SelectedProjectDetails from "@/Components/ShowCase/SelectedProjectDetails";
 import { projects, showcaseImgPositions } from "@/constants/index.ts";
+import SelectedProjectDetails from "@/Components/ShowCase/SelectedProjectDetails.tsx";
+import type { projectType } from "@/types/index.ts";
 
 const Showcase = () => {
   const showCaseRef = useRef(null);
 
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<projectType | null>(
+    null,
+  );
 
   useGSAP(
     () => {
@@ -27,7 +30,8 @@ const Showcase = () => {
           trigger: showCaseRef.current,
           start: "top 80%", // fires when section is 80% into viewport
           end: "center center",
-          toggleActions: "play none none reverse",
+          // toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       });
 
@@ -112,7 +116,7 @@ const Showcase = () => {
     { scope: showCaseRef, dependencies: [selectedProject] },
   );
 
-  const handleProjectClick = (image) => {
+  const handleProjectClick = (image: projectType) => {
     // If clicking the same project, deselect and fade out
     if (selectedProject?.id === image.id) {
       // Slide out — collapses back to bottom-left
