@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { Input } from "@/Components/ui/input.tsx";
+import { Textarea } from "./ui/textarea.tsx";
+import { Button } from "./ui/button.tsx";
 import {
   Card,
   CardContent,
@@ -6,10 +8,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "./ui/textarea";
+} from "./ui/card.tsx";
+import { Label } from "./ui/label.tsx";
 
 const ContactForm = () => {
   return (

@@ -1,4 +1,4 @@
-const FileDownloadSvg = ({ className }) => {
+const FileDownloadSvg = ({ className }: { className: string }) => {
   return (
     <svg
       width="25px"

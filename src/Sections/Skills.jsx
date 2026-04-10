@@ -1,8 +1,8 @@
-import { skills } from "../constants";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { SplitText } from "gsap/SplitText";
+import { skills } from "@/constants";
 
 const Skills = () => {
   const skillsContainer = useRef(null);
@@ -38,10 +38,10 @@ const Skills = () => {
             trigger: "#skills-container",
             start: "40px bottom",
           },
-        }
+        },
       );
     },
-    { scope: skillsContainer }
+    { scope: skillsContainer },
   );
 
   return (

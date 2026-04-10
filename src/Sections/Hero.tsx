@@ -2,10 +2,10 @@ import { useGSAP } from "@gsap/react";
 import HeroImg from "../assets/hero-img.png";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import ScrollDownSvg from "../Components/ScrollDownSvg";
-import FileDownloadSvg from "../Components/FileDownloadSvg";
 import { useRef } from "react";
-import { CSSRulePlugin } from "gsap/all";
+import FileDownloadSvg from "../Components/Icons/FileDownloadSvg.js";
+import ScrollDownSvg from "../Components/Icons/ScrollDownSvg.js";
+import TechStacks from "@/Components/Hero/TechStacks.tsx";
 const Hero = () => {
   const aboutContainer = useRef(null);
   // Download CSV button hover animation
@@ -63,9 +63,9 @@ const Hero = () => {
       const split = SplitText.create("li", {
         type: "chars",
       });
-      // const split2 = SplitText.create("#name", {
-      //   type: "chars",
-      // });
+      const split2 = SplitText.create("#name", {
+        type: "chars",
+      });
 
       // image animation
       gsap.fromTo(
@@ -87,30 +87,23 @@ const Hero = () => {
         ease: "power2.outIn",
       });
 
-      tl.fromTo(
-        "#after",
-        {
-          scaleX: 1,
-          transformOrigin: "0 100%",
-        },
-        {
-          scaleX: 0,
-          transformOrigin: "100% 100%",
-          ease: "elastic.out",
-        },
-      )
-        // .from(split2.chars, {
-        //   opacity: 0,
-        //   y: 10,
-        //   stagger: 0.05,
-        //   ease: "power2.inOut",
-        // })
-        .from(split.chars, {
-          opacity: 0,
-          y: 10,
-          stagger: 0.08,
-          ease: "power2.inOut",
-        });
+      tl.from(split2.chars, {
+        opacity: 0,
+        y: 10,
+        stagger: 0.05,
+        ease: "power2.inOut",
+      }).from(".coll-stack", {
+        opacity: 0,
+        y: 10,
+        stagger: 0.08,
+        ease: "power2.inOut",
+      });
+      // .from(split.chars, {
+      //   opacity: 0,
+      //   y: 10,
+      //   stagger: 0.08,
+      //   ease: "power2.inOut",
+      // });
 
       // timeline 2 of left side bottom
       tl2
@@ -165,23 +158,18 @@ const Hero = () => {
       <div className="flex xl:flex-col lg:flex-row flex-col lg:justify-between xl:gap-0 gap-10 pt-20 pr-10 flex-1">
         {/* Top Left Section */}
         <div>
-          <div className="relative">
-            <h1 className="text-tropical-teal text-4xl mb-4" id="name">
-              Hassan Abdellah
-            </h1>
-
-            <div
-              id="after"
-              className="absolute inset-0 h-full w-full bg-white transition-transform duration-300"
-            />
-          </div>
-          <ul>
+          <h1 className="text-tropical-teal text-4xl mb-4" id="name">
+            Hassan Abdellah
+          </h1>
+          {/* <ul>
             {["Web Devloper", "Web Designer", "UI / UX"].map((item, index) => (
               <li key={index} className="text-ghost-white">
                 {item}
               </li>
             ))}
-          </ul>
+          </ul> */}
+
+          <TechStacks />
         </div>
         {/* Bottom Left Section */}
         <div>
