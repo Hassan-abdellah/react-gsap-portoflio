@@ -1,8 +1,9 @@
 // import gsap from "gsap";
-import { navbarLinks } from "../constants";
-import MobileNavigationMenu from "./MobileNavigationMenu";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import { useGSAP } from "@gsap/react";
+
+import { navbarLinks } from "@/constants/index.ts";
+import MobileNavigationMenu from "./MobileNavigationMenu.tsx";
 
 const Navbar = () => {
   // gsap.registerPlugin(ScrollTrigger);

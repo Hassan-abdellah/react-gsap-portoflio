@@ -3,9 +3,9 @@ import Mackbook from "@/assets/mackbook-screen.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { showcaseImgPositions, projects } from "@/constants";
 import clsx from "clsx";
 import SelectedProjectDetails from "@/Components/ShowCase/SelectedProjectDetails";
+import { projects, showcaseImgPositions } from "@/constants/index.ts";
 
 const Showcase = () => {
   const showCaseRef = useRef(null);

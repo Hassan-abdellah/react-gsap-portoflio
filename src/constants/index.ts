@@ -114,3 +114,18 @@ export const showcaseImgPositions = [
     to: { right: "3%", bottom: "-5%", opacity: 1 },
   },
 ];
+
+export const stacks = [
+  {
+    name: "Front-End",
+    techs: ["React Js", "Typescript"],
+  },
+  {
+    name: "Styling",
+    techs: ["Shadcn", "Tailwind CSS"],
+  },
+  {
+    name: "Back-End",
+    techs: ["Supabase", "Clerk"],
+  },
+];

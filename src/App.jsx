@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import Navbar from "./Components/Navbar";
 import Hero from "./Sections/Hero";
 import Skills from "./Sections/Skills";
 import { SplitText } from "gsap/SplitText";
@@ -8,6 +7,7 @@ import Lenis from "lenis";
 import Footer from "./Components/Footer";
 import ContactSection from "./Sections/ContactSection";
 import Showcase from "./Sections/Showcase";
+import Navbar from "./Components/Navbar";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 

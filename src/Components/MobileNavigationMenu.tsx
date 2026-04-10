@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from "react";
-import { Sheet, SheetContent } from "./ui/sheet";
+import { Fragment, useState } from "react";
 import { Menu } from "lucide-react";
-import { navbarLinks } from "@/constants";
-import { Button } from "./ui/button";
+import { Button } from "./ui/button.tsx";
+import { Sheet, SheetContent } from "./ui/sheet.tsx";
+import { navbarLinks } from "@/constants/index.ts";
 
 const MobileNavigationMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
