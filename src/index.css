@@ -34,8 +34,14 @@
   }
 }
 
-@utility subtitle {
-  @apply text-center text-ghost-white;
+@layer utilities {
+  .subtitle {
+    @apply text-center text-ghost-white;
+  }
+
+  .input-field {
+    @apply border-ghost-white border-2 placeholder:text-ghost-white/50 text-ghost-white focus-visible:ring-tropical-teal focus-visible:border-ghost-white;
+  }
 }
 
 @theme inline {

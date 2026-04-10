@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "./ui/card.tsx";
 import { Label } from "./ui/label.tsx";
+import FormController from "./Form/FormController.tsx";
 
 const ContactForm = () => {
   return (
@@ -25,44 +26,28 @@ const ContactForm = () => {
       <CardContent>
         <form>
           <div className="flex flex-col gap-6">
-            <div className="grid gap-3">
-              <Label htmlFor="name" className="text-ghost-white">
-                Name
-              </Label>
-              <Input
-                id="name"
-                type="text"
-                placeholder="John Doe"
-                required
-                className="border-ghost-white border-2 placeholder:text-ghost-white/50 text-ghost-white
-                focus-visible:ring-ghost-white focus-visible:border-none
-                "
-              />
-            </div>
-            <div className="grid gap-3">
-              <Label htmlFor="email" className="text-ghost-white">
-                Email
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                className="border-ghost-white border-2 placeholder:text-ghost-white/50 text-ghost-white focus-visible:ring-ghost-white focus-visible:border-none"
-                required
-              />
-            </div>
-
-            <div className="grid gap-3">
-              <Label htmlFor="message" className="text-ghost-white">
-                Message
-              </Label>
-              <Textarea
-                id="message"
-                placeholder="Your message here..."
-                className="border-ghost-white border-2 placeholder:text-ghost-white/50 text-ghost-white focus-visible:ring-ghost-white focus-visible:border-none"
-                required
-              />
-            </div>
+            <FormController
+              id="name"
+              placeholder="Ex: John Doe"
+              value=""
+              onChange={() => {}}
+              label="Name"
+            />
+            <FormController
+              id="email"
+              placeholder="m@example.com"
+              value=""
+              onChange={() => {}}
+              label="Email"
+            />
+            <FormController
+              id="message"
+              placeholder="Your message here..."
+              value=""
+              onChange={() => {}}
+              label="Message"
+              isTextArea
+            />
           </div>
         </form>
       </CardContent>
