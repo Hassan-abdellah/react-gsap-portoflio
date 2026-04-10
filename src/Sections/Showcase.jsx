@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { showcaseImgPositions, projects } from "@/constants";
 import clsx from "clsx";
-import { Globe } from "lucide-react";
+import SelectedProjectDetails from "@/Components/ShowCase/SelectedProjectDetails";
 
 const Showcase = () => {
   const showCaseRef = useRef(null);
@@ -61,8 +61,17 @@ const Showcase = () => {
 
       // Kill any in-progress animation on #bg first
       gsap.killTweensOf("#bg");
+      // Kill any in-progress animation on #project-details first
 
-      gsap.fromTo(
+      gsap.killTweensOf("#project-details");
+
+      const tl = gsap.timeline({
+        defaults: {
+          ease: "power3.inOut",
+        },
+      });
+
+      tl.fromTo(
         "#bg",
         {
           opacity: 1,
@@ -73,7 +82,32 @@ const Showcase = () => {
           duration: 0.6,
           ease: "power3.out",
         },
-      );
+      )
+        .fromTo(
+          "#project-details h3",
+          {
+            opacity: 0,
+            y: 10,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            ease: "power3.out",
+          },
+        )
+        .fromTo(
+          "#project-details a",
+          {
+            opacity: 0,
+            xPercent: -10,
+          },
+          {
+            opacity: 1,
+            xPercent: 0,
+            stagger: 0.05,
+            ease: "power3.out",
+          },
+        );
     },
     { scope: showCaseRef, dependencies: [selectedProject] },
   );
@@ -149,32 +183,7 @@ const Showcase = () => {
 
       {/* project details */}
       {selectedProject ? (
-        <div>
-          <h3 className="text-ghost-white text-center text-2xl mb-1">
-            {selectedProject?.name}
-          </h3>
-
-          <div className="flex items-center justify-center gap-1">
-            <a
-              href={selectedProject?.websiteURL}
-              target="_blank"
-              className="text-ghost-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-ghost-white"
-            >
-              <Globe className="size-4" />
-            </a>
-            <a
-              href={selectedProject?.githubURL}
-              target="_blank"
-              className="text-ghost-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-ghost-white"
-            >
-              <img
-                src={"/images/links/github-svg.svg"}
-                alt={"github"}
-                className="w-4 h-4"
-              />
-            </a>
-          </div>
-        </div>
+        <SelectedProjectDetails project={selectedProject} />
       ) : null}
     </section>
   );
