@@ -1,14 +1,14 @@
 import gsap from "gsap";
-import Hero from "./Sections/Hero";
-import Skills from "./Sections/Skills";
+import Hero from "./Sections/Hero.js";
+import Skills from "./Sections/Skills.jsx";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import Footer from "./Components/Footer";
-import ContactSection from "./Sections/ContactSection";
-import Showcase from "./Sections/Showcase";
-import Navbar from "./Components/Navbar";
-
+import ContactSection from "./Sections/ContactSection.js";
+import Showcase from "./Sections/Showcase.js";
+import Navbar from "./Components/Navbar.js";
+import { Toaster } from "@/components/ui/sonner";
+import Footer from "./Components/Footer.jsx";
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const App = () => {
@@ -30,6 +30,8 @@ const App = () => {
       <Showcase />
       <ContactSection />
       <Footer />
+
+      <Toaster />
     </main>
   );
 };
