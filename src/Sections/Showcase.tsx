@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import Mackbook from "@/assets/mackbook-screen.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -7,9 +7,13 @@ import clsx from "clsx";
 import { projects, showcaseImgPositions } from "@/constants/index.ts";
 import SelectedProjectDetails from "@/Components/ShowCase/SelectedProjectDetails.tsx";
 import type { projectType } from "@/types/index.ts";
+import BrowserToolbar from "@/Components/ShowCase/BrowserToolbar.tsx";
+import { useMediaQuery } from "react-responsive";
+import MackbookBackground from "@/Components/ShowCase/MackbookBackground.tsx";
 
 const Showcase = () => {
   const showCaseRef = useRef(null);
+  const isMobile = useMediaQuery({ query: "(max-width:768px)" });
 
   const [selectedProject, setSelectedProject] = useState<projectType | null>(
     null,
@@ -39,29 +43,77 @@ const Showcase = () => {
         opacity: 0,
         y: 10,
         stagger: 0.05,
-      })
-        .from("#macbook", {
-          opacity: 0,
-          y: 10,
-        })
-        .addLabel("images"); // ✅ marks the point after macbook finishes
+      });
+
+      if (isMobile) {
+        gsap.utils.toArray(".project").map((project, i) => {
+          const el = project as Element;
+          tl.fromTo(
+            el.querySelector(".image-wrapper"),
+            {
+              y: 10,
+              xPercent: -10,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              xPercent: 0,
+              opacity: 1,
+              stagger: 0.05,
+              ease: "power3.inOut",
+            },
+          )
+            .fromTo(
+              el.querySelector("h3"),
+              {
+                opacity: 0,
+                y: 10,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                stagger: 0.05,
+                ease: "power3.out",
+              },
+            )
+            .fromTo(
+              el.querySelectorAll("a"),
+              {
+                opacity: 0,
+                xPercent: -10,
+              },
+              {
+                opacity: 1,
+                xPercent: 0,
+                stagger: 0.05,
+                ease: "power3.out",
+              },
+            );
+        });
+
+        return;
+      }
+      tl.from("#macbook", {
+        opacity: 0,
+        y: 10,
+      }).addLabel("images"); // ✅ marks the point after macbook finishes
 
       showcaseImgPositions.forEach((position) => {
         tl.fromTo(
           `.${position.id}`, // targets the class on the <img> inside each card
           position.from,
           position.to,
-          "#images",
+          "images",
         );
       });
     },
-    { scope: showCaseRef },
+    { scope: showCaseRef, dependencies: [isMobile] },
   );
 
   // ✅ Fires every time selectedProject changes
   useGSAP(
     () => {
-      if (!selectedProject) return;
+      if (!selectedProject || isMobile) return;
 
       // Kill any in-progress animation on #bg first
       gsap.killTweensOf("#bg");
@@ -113,12 +165,24 @@ const Showcase = () => {
           },
         );
     },
-    { scope: showCaseRef, dependencies: [selectedProject] },
+    { scope: showCaseRef, dependencies: [selectedProject, isMobile] },
   );
 
   const handleProjectClick = (image: projectType) => {
     // If clicking the same project, deselect and fade out
     if (selectedProject?.id === image.id) {
+      gsap.to("#project-details h3", {
+        opacity: 0,
+        y: 10,
+        ease: "power3.out",
+      });
+      gsap.to("#project-details a", {
+        opacity: 0,
+        xPercent: -10,
+        stagger: 0.05,
+        ease: "power3.out",
+      });
+
       // Slide out — collapses back to bottom-left
       gsap.to("#bg", {
         clipPath: "polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%)",
@@ -142,47 +206,62 @@ const Showcase = () => {
           id="macbook"
           src={Mackbook}
           alt="mackbook-screen"
-          className="mx-auto object-cover h-120"
+          className="mx-auto object-cover h-120 lg:block hidden"
         />
-
-        {projects.map((image) => (
-          <div
-            key={image.id}
-            className={clsx(
-              image.id,
-              "w-120 h-fit overflow-hidden absolute rounded-t-2xl cursor-pointer shadow-sm shadow-gray-100",
-            )}
-            onClick={() => handleProjectClick(image)}
-          >
-            {/* toolbar */}
-            <div className="bg-[#F3F2F2] rounded-t-2xl h-4 pl-3 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-red-500" />
-              <span className="w-2 h-2 rounded-full bg-green-500" />
-              <span className="w-2 h-2 rounded-full bg-white" />
+        {/* project List */}
+        {/* for desktop */}
+        <div className="lg:block hidden">
+          {projects.map((image) => (
+            <div
+              key={image.id}
+              className={clsx(
+                image.id,
+                "w-120 h-fit overflow-hidden absolute rounded-t-2xl cursor-pointer shadow-sm shadow-gray-100",
+              )}
+              onClick={() => handleProjectClick(image)}
+            >
+              {/* toolbar */}
+              <BrowserToolbar />
+              {/* image */}
+              <img
+                src={image.image}
+                alt={image.name}
+                className="w-full h-[calc(100%-16px)] object-cover"
+              />
             </div>
-            {/* image */}
-            <img
-              src={image.image}
-              alt={image.name}
-              className="w-full h-[calc(100%-16px)] object-cover"
-            />
-          </div>
-        ))}
-        {/* background  */}
-
-        {/* Wrapper handles centering — GSAP never touches it */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[320px] h-[210px]">
-          {/* GSAP animates only this inner div */}
-          <div
-            id="bg"
-            className="w-full h-full bg-cover bg-center opacity-0"
-            style={{
-              backgroundImage: selectedProject
-                ? `url(${selectedProject.image})`
-                : "none",
-            }}
-          />
+          ))}
         </div>
+
+        {/* project List */}
+        {/* form Mobile */}
+        <div className="lg:hidden flex flex-col items-center gap-4">
+          {projects.map((image) => (
+            <div className="project w-[calc(100%-30px)]" key={image.id}>
+              <div
+                className={clsx(
+                  image.id,
+                  "image-wrapper",
+                  "h-64 w-full overflow-hidden rounded-t-2xl shadow-sm shadow-gray-100 mb-4",
+                )}
+              >
+                {/* toolbar */}
+                <BrowserToolbar />
+                {/* image */}
+                <img
+                  src={image.image}
+                  alt={image.name}
+                  className="w-full h-full"
+                />
+              </div>
+              <SelectedProjectDetails project={image} />
+            </div>
+          ))}
+        </div>
+
+        {/* background  */}
+        {selectedProject ? (
+          <MackbookBackground selectedProject={selectedProject} />
+        ) : null}
       </div>
 
       {/* project details */}

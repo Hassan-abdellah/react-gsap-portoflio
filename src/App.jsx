@@ -1,14 +1,14 @@
 import gsap from "gsap";
-import Hero from "./Sections/Hero.js";
-import Skills from "./Sections/Skills.jsx";
+import Navbar from "./Components/Navbar";
+import Hero from "./Sections/Hero";
+import Skills from "./Sections/Skills";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import ContactSection from "./Sections/ContactSection.js";
-import Showcase from "./Sections/Showcase.js";
-import Navbar from "./Components/Navbar.js";
-import { Toaster } from "@/components/ui/sonner";
-import Footer from "./Components/Footer.jsx";
+import Footer from "./Components/Footer";
+import ContactSection from "./Sections/ContactSection";
+import Showcase from "./Sections/Showcase";
+
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
 
   // Listen for the scroll event and log the event data
   lenis.on("scroll", (e) => {
-    // console.log(e);
+    console.log(e);
   });
 
   return (
@@ -30,8 +30,6 @@ const App = () => {
       <Showcase />
       <ContactSection />
       <Footer />
-
-      <Toaster />
     </main>
   );
 };
