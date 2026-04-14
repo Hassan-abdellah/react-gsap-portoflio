@@ -66,8 +66,8 @@ export const projects = [
     id: "p1",
     name: "Expense Tracker",
     image: "/images/projects/expense-tracker.jpg",
-    githubURL: "https://github.com/Hassan-abdellah",
-    websiteURL: "https://github.com/Hassan-abdellah",
+    githubURL: "https://github.com/Hassan-abdellah/expenses-tracker",
+    websiteURL: "https://ex-trackers.netlify.app",
   },
   {
     id: "p2",
