@@ -6,7 +6,10 @@ import { useRef } from "react";
 import FileDownloadSvg from "../components/Icons/FileDownloadSvg.js";
 import ScrollDownSvg from "../components/Icons/ScrollDownSvg.js";
 import TechStacks from "@/components/Hero/TechStacks.tsx";
+import { useMediaQuery } from "react-responsive";
 const Hero = () => {
+  const isMobile = useMediaQuery({ query: "(max-width:768px)" });
+
   const aboutContainer = useRef(null);
   // Download CSV button hover animation
   const handleDownloadButtonHover = () => {
@@ -59,35 +62,32 @@ const Hero = () => {
       const tl2 = gsap.timeline();
       const tl3 = gsap.timeline();
       const tl4 = gsap.timeline();
-
-      const split = SplitText.create("li", {
-        type: "chars",
-      });
-      const split2 = SplitText.create("#name", {
+      const imgTl = gsap.timeline();
+      const split = SplitText.create("#name", {
         type: "chars",
       });
 
       // image animation
-      gsap.fromTo(
-        "#img-container",
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-        },
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-          duration: 1.2,
-          ease: "power2.outIn",
-        },
-      );
-      gsap.from("#img-container img", {
-        scale: 1.5,
-        opacity: 0,
-        duration: 1,
-        delay: 1.2,
-        ease: "power2.outIn",
-      });
+      imgTl
+        .fromTo(
+          "#img-container",
+          {
+            clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+          },
+          {
+            clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+            duration: 1.2,
+            ease: "power2.inOut",
+          },
+        )
+        .from("#img-container img", {
+          scale: 1.5,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.inOut",
+        });
 
-      tl.from(split2.chars, {
+      tl.from(split.chars, {
         opacity: 0,
         y: 10,
         stagger: 0.05,
@@ -98,12 +98,6 @@ const Hero = () => {
         stagger: 0.08,
         ease: "power2.inOut",
       });
-      // .from(split.chars, {
-      //   opacity: 0,
-      //   y: 10,
-      //   stagger: 0.08,
-      //   ease: "power2.inOut",
-      // });
 
       // timeline 2 of left side bottom
       tl2
@@ -145,8 +139,27 @@ const Hero = () => {
           y: -10,
           ease: "elastic.inOut",
         });
+
+      // then connect them
+      const master = gsap.timeline();
+      if (isMobile) {
+        master
+          .add(tl)
+          .add(imgTl, "-=0.3") // starts 0.3s before tl finishes
+          .add(tl2, "-=0.3") // starts 0.3s before tl finishes
+          .add(tl3, "-=0.3") // starts 0.3s before tl2 finishes
+          .add(tl4, "-=0.3"); // starts 0.3s before tl3 finishes
+      } else {
+        master
+          .add(imgTl)
+          .add(tl, "-=0.3") // starts 0.3s before imgtl finishes
+          .add(tl2, "-=0.3") // starts 0.3s before tl finishes
+          .add(tl3, "-=0.3") // starts 0.3s before tl2 finishes
+          .add(tl4, "-=0.3"); // starts 0.3s before tl3 finishes
+      }
+      return () => split.revert();
     },
-    { scope: aboutContainer },
+    { scope: aboutContainer, dependencies: [isMobile] },
   );
   return (
     <section
@@ -161,13 +174,6 @@ const Hero = () => {
           <h1 className="text-tropical-teal text-4xl mb-4" id="name">
             Hassan Abdellah
           </h1>
-          {/* <ul>
-            {["Web Devloper", "Web Designer", "UI / UX"].map((item, index) => (
-              <li key={index} className="text-ghost-white">
-                {item}
-              </li>
-            ))}
-          </ul> */}
 
           <TechStacks />
         </div>
