@@ -1,11 +1,11 @@
 import gsap from "gsap";
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
 import Hero from "./Sections/Hero";
 import Skills from "./Sections/Skills";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import Footer from "./Components/Footer";
+import Footer from "./components/Footer";
 import ContactSection from "./Sections/ContactSection";
 import Showcase from "./Sections/Showcase";
 
