@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import ContactForm from "@/Components/ContactForm.tsx";
-import DealSvg from "@/Components/Icons/DealSvg.tsx";
+import ContactForm from "@/components/ContactForm.tsx";
+import DealSvg from "@/components/Icons/DealSvg.tsx";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const ContactSection = () => {

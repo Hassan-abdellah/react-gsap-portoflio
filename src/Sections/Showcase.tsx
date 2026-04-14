@@ -5,11 +5,11 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import clsx from "clsx";
 import { projects, showcaseImgPositions } from "@/constants/index.ts";
-import SelectedProjectDetails from "@/Components/ShowCase/SelectedProjectDetails.tsx";
+import SelectedProjectDetails from "@/components/ShowCase/SelectedProjectDetails.tsx";
 import type { projectType } from "@/types/index.ts";
-import BrowserToolbar from "@/Components/ShowCase/BrowserToolbar.tsx";
+import BrowserToolbar from "@/components/ShowCase/BrowserToolbar.tsx";
 import { useMediaQuery } from "react-responsive";
-import MackbookBackground from "@/Components/ShowCase/MackbookBackground.tsx";
+import MackbookBackground from "@/components/ShowCase/MackbookBackground.tsx";
 
 const Showcase = () => {
   const showCaseRef = useRef(null);

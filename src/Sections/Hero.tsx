@@ -3,9 +3,9 @@ import HeroImg from "../assets/hero-img.png";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
-import FileDownloadSvg from "../Components/Icons/FileDownloadSvg.js";
-import ScrollDownSvg from "../Components/Icons/ScrollDownSvg.js";
-import TechStacks from "@/Components/Hero/TechStacks.tsx";
+import FileDownloadSvg from "../components/Icons/FileDownloadSvg.js";
+import ScrollDownSvg from "../components/Icons/ScrollDownSvg.js";
+import TechStacks from "@/components/Hero/TechStacks.tsx";
 const Hero = () => {
   const aboutContainer = useRef(null);
   // Download CSV button hover animation
