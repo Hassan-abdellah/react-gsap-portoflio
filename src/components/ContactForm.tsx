@@ -61,7 +61,7 @@ const ContactForm = () => {
     }
   }, [success]);
   return (
-    <Card className="sm:w-xl w-sm max-w-2xl bg-[#3a506b]/20">
+    <Card className="sm:w-xl w-[calc(100vw-20px)] max-w-2xl bg-[#3a506b]/20">
       <CardHeader className="border-ghost-white/50 border-b">
         <CardTitle className="text-tropical-teal font-bold text-2xl">
           Have a project in mind?
