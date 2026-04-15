@@ -32,7 +32,7 @@ const Showcase = () => {
         },
         scrollTrigger: {
           trigger: showCaseRef.current,
-          start: "top 80%", // fires when section is 80% into viewport
+          start: isMobile ? "top 90%" : "top 80%", // fires when section is 80% into viewport
           end: "center center",
           // toggleActions: "play none none reverse",
           toggleActions: "play none none none",

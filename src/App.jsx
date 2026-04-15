@@ -8,6 +8,7 @@ import Lenis from "lenis";
 import Footer from "./components/Footer";
 import ContactSection from "./Sections/ContactSection";
 import Showcase from "./Sections/Showcase";
+import { Toaster } from "./components/ui/sonner";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -23,14 +24,17 @@ const App = () => {
   });
 
   return (
-    <main>
+    <>
       <Navbar />
-      <Hero />
-      <Skills />
-      <Showcase />
-      <ContactSection />
+      <main className="overflow-x-hidden">
+        <Hero />
+        <Skills />
+        <Showcase />
+        <ContactSection />
+      </main>
       <Footer />
-    </main>
+      <Toaster />
+    </>
   );
 };
 
