@@ -187,16 +187,16 @@ const Hero = () => {
             <br />
             Have an Idea in your mind?
           </p>
-          <button
-            type="button"
+          <a
+            href="#contact"
             aria-label="Contact Me"
             id="contact-button"
-            className="bg-tropical-teal text-ghost-white cursor-pointer px-4 py-2 rounded-lg overflow-hidden relative"
+            className="inline-block bg-tropical-teal text-ghost-white cursor-pointer px-4 py-2 rounded-lg overflow-hidden relative"
             onMouseEnter={handleContactButtonHover}
             onMouseLeave={handleContactButtonHoverExit}
           >
             Contact Me
-          </button>
+          </a>
         </div>
       </div>
       {/* hero image */}
