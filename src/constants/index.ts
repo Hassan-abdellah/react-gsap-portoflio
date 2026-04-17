@@ -78,17 +78,17 @@ export const projects = [
   },
   {
     id: "p3",
-    name: "Expense Tracker",
-    image: "/images/projects/expense-tracker.jpg",
-    githubURL: "https://github.com/Hassan-abdellah",
-    websiteURL: "https://github.com/Hassan-abdellah",
+    name: "Coffee & Desserts Store",
+    image: "/images/projects/coffee-store.jpg",
+    githubURL: "https://github.com/Hassan-abdellah/dessert-coffee-store",
+    websiteURL: "https://coffee-desserts.netlify.app",
   },
   {
     id: "p4",
-    name: "Expense Tracker",
-    image: "/images/projects/expense-tracker.jpg",
-    githubURL: "https://github.com/Hassan-abdellah",
-    websiteURL: "https://github.com/Hassan-abdellah",
+    name: "Browser Extensions Manager",
+    image: "/images/projects/browser-extensions.jpg",
+    githubURL: "https://github.com/Hassan-abdellah/browser-extensions-manager",
+    websiteURL: "https://browser-extensions-mnger.netlify.app",
   },
 ];
 
