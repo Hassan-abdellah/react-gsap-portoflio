@@ -216,7 +216,7 @@ const Showcase = () => {
               key={image.id}
               className={clsx(
                 image.id,
-                "w-120 h-fit overflow-hidden absolute rounded-t-2xl cursor-pointer shadow-sm shadow-gray-100",
+                "w-120 h-64 overflow-hidden absolute rounded-t-2xl cursor-pointer shadow-sm shadow-gray-100",
               )}
               onClick={() => handleProjectClick(image)}
             >
@@ -233,8 +233,8 @@ const Showcase = () => {
         </div>
 
         {/* project List */}
-        {/* form Mobile */}
-        <div className="lg:hidden flex flex-col items-center gap-4">
+        {/* for Mobile */}
+        <div className="lg:hidden grid sm:grid-cols-2 grid-cols-1 place-content-center place-items-center gap-x-1 gap-y-8">
           {projects.map((image) => (
             <div className="project w-[calc(100%-30px)]" key={image.id}>
               <div
@@ -250,7 +250,7 @@ const Showcase = () => {
                 <img
                   src={image.image}
                   alt={image.name}
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <SelectedProjectDetails project={image} />
