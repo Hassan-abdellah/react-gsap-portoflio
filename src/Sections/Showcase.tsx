@@ -265,7 +265,7 @@ const Showcase = () => {
       </div>
 
       {/* project details */}
-      {selectedProject ? (
+      {selectedProject && !isMobile ? (
         <SelectedProjectDetails project={selectedProject} />
       ) : null}
     </section>
