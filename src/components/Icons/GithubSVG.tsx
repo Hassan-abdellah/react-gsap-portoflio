@@ -1,5 +1,5 @@
 import type { AnimatedIconProps } from "@/types/index.ts";
-import type { Transition, Variants } from "motion/react";
+import type { Transition } from "motion/react";
 import { motion, useAnimation } from "motion/react";
 
 const defaultTransition: Transition = {
