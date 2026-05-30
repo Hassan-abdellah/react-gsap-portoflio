@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { SplitText } from "gsap/SplitText";
-import { skills } from "@/constants";
+import { skills } from "@/constants/index.ts";
 
 const Skills = () => {
   const skillsContainer = useRef(null);
@@ -56,7 +56,7 @@ const Skills = () => {
         {skills.map(({ title, icon }) => (
           <div
             key={title}
-            className="flex flex-col items-center gap-4 bg-[#3a506b]/20 py-6 rounded-xl transition-transform duration-150 ease-in-out hover:rotate-y-12"
+            className="flex flex-col items-center gap-4 bg-[#3a506b]/20 py-6 rounded-xl transition-transform duration-150 ease-in-out"
           >
             <h4 className="subtitle text-xl">{title}</h4>
             <img src={icon} alt={title} className="w-20 h-20" />

@@ -1,6 +1,3 @@
-// useSendEmail.js
-// Drop this hook into your React project and call it instead of emailjs.send()
-
 import { useState } from "react";
 
 const API_URL = import.meta.env.VITE_EMAIL_API_URL || "http://localhost:3001";
