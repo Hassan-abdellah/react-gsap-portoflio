@@ -87,10 +87,10 @@ export const projects = [
   },
   {
     id: "p2",
-    name: "Expense Tracker",
-    image: "/images/projects/expense-tracker.jpg",
-    githubURL: "https://github.com/Hassan-abdellah",
-    websiteURL: "https://github.com/Hassan-abdellah",
+    name: "Developer Portfolio",
+    image: "/images/projects/develeportfolio.png",
+    githubURL: "https://github.com/Hassan-abdellah/react-gsap-portoflio",
+    websiteURL: "https://develeportfolio.netlify.app",
   },
   {
     id: "p3",

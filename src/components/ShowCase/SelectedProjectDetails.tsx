@@ -1,4 +1,6 @@
+import clsx from "clsx";
 import type { projectType } from "../../types/index.js";
+import AnimatedIconLink from "../common/AnimatedIconLink.tsx";
 import GithubSVG from "../Icons/GithubSVG.js";
 import GlobeSVG from "../Icons/GlobeSVG.js";
 
@@ -10,23 +12,27 @@ const SelectedProjectDetails = ({ project }: { project: projectType }) => {
       </h3>
 
       <div className="flex items-center justify-center gap-1">
-        <a
+        <AnimatedIconLink
+          IconComponent={GlobeSVG}
           href={project.websiteURL}
+          aria-label="preview Website"
           target="_blank"
-          className="group text-ghost-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-ghost-white hover:bg-ghost-white transition-colors duration-300"
-        >
-          <GlobeSVG
-            classNames="w-5 h-5"
-            pathClassNames="group-hover:stroke-tropical-teal stroke-ghost-white transition-colors duration-300"
-          />
-        </a>
-        <a
+          className="group text-ghost-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-ghost-white hover:bg-ghost-white hover:text-tropical-teal transition-colors duration-300"
+          iconwidth={20}
+          iconheight={20}
+          iconstrokeWidth={1.8}
+        />
+
+        <AnimatedIconLink
+          IconComponent={GithubSVG}
           href={project.githubURL}
+          aria-label="View Github Repository"
           target="_blank"
-          className="group text-ghost-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-ghost-white hover:bg-ghost-white transition-colors duration-300"
-        >
-          <GithubSVG classNames="stroke-ghost-white fill-ghost-white w-5 h-5 group-hover:stroke-tropical-teal group-hover:fill-tropical-teal transition-colors duration-300" />
-        </a>
+          className="group text-ghost-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-ghost-white hover:bg-ghost-white hover:text-tropical-teal transition-colors duration-300"
+          iconwidth={22}
+          iconheight={22}
+          iconstrokeWidth={1.8}
+        />
       </div>
     </div>
   );
