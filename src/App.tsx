@@ -1,14 +1,14 @@
 import gsap from "gsap";
-import Navbar from "./components/Navbar";
-import Hero from "./Sections/Hero";
-import Skills from "./Sections/Skills";
+import Navbar from "./components/Navbar.tsx";
+import Hero from "./Sections/Hero.tsx";
+import Skills from "./Sections/Skills.tsx";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import Footer from "./components/Footer";
-import ContactSection from "./Sections/ContactSection";
-import Showcase from "./Sections/Showcase";
-import { Toaster } from "./components/ui/sonner";
+import Footer from "./components/Footer.tsx";
+import ContactSection from "./Sections/ContactSection.tsx";
+import Showcase from "./Sections/Showcase.tsx";
+import { Toaster } from "./components/ui/sonner.tsx";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 

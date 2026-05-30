@@ -46,6 +46,22 @@ export const skills = [
     title: "Chakra UI",
     icon: "/images/skills/chakraui.svg",
   },
+  {
+    title: "Node Js",
+    icon: "/images/skills/nodejs.svg",
+  },
+  {
+    title: "Supabase",
+    icon: "/images/skills/supabase.svg",
+  },
+  {
+    title: "PostgreSQL",
+    icon: "/images/skills/postgresql.svg",
+  },
+  {
+    title: "Prisma",
+    icon: "/images/skills/prisma.svg",
+  },
 ];
 
 export const socialLinks = [
@@ -118,7 +134,7 @@ export const showcaseImgPositions = [
 export const stacks = [
   {
     name: "Front-End",
-    techs: ["React Js", "Typescript"],
+    techs: ["React Js", "Next JS", "Typescript"],
   },
   {
     name: "Styling",
@@ -126,6 +142,6 @@ export const stacks = [
   },
   {
     name: "Back-End",
-    techs: ["Supabase", "Clerk"],
+    techs: ["Supabase", "Clerk", "Node JS", "Prisma", "PostreSQL"],
   },
 ];
