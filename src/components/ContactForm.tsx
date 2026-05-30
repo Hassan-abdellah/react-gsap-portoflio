@@ -12,9 +12,12 @@ import { Fragment, useCallback, useEffect, useState } from "react";
 import { useSendEmail } from "@/hooks/useSendEmail.ts";
 import { toast } from "sonner";
 import { Spinner } from "./ui/spinner.tsx";
+import RightUpArrowIcon from "./Icons/RightUpArrowIcon.tsx";
+import { useAnimation } from "motion/react";
 
 const ContactForm = () => {
   const { send, loading, error, success } = useSendEmail();
+  const controls = useAnimation();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -105,12 +108,14 @@ const ContactForm = () => {
           </div>
         </form>
       </CardContent>
-      <CardFooter className="flex-col gap-2 bg-[#3a506b]/20 border-ghost-white/50 mt-4">
+      <CardFooter className="flex-col gap-1 bg-[#3a506b]/20 border-ghost-white/50 mt-4">
         <Button
           form="form-id"
           type="submit"
           disabled={loading}
           className="flex items-center justify-center w-full bg-tropical-teal text-ghost-white hover:bg-tropical-teal/90 cursor-pointer py-5 disabled:cursor-not-allowed"
+          onMouseEnter={() => controls.start("animate")}
+          onMouseLeave={() => controls.start("normal")}
         >
           {loading ? (
             <Fragment>
@@ -118,7 +123,10 @@ const ContactForm = () => {
               <span>Sending...</span>
             </Fragment>
           ) : (
-            <span>Send Message</span>
+            <Fragment>
+              <span>Send Message</span>
+              <RightUpArrowIcon controls={controls} width={35} height={35} />
+            </Fragment>
           )}
         </Button>
       </CardFooter>
