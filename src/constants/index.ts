@@ -80,10 +80,10 @@ export const socialLinks = [
 export const projects = [
   {
     id: "p1",
-    name: "Expense Tracker",
-    image: "/images/projects/expense-tracker.jpg",
-    githubURL: "https://github.com/Hassan-abdellah/expenses-tracker",
-    websiteURL: "https://ex-trackers.netlify.app",
+    name: "Image Hosting Server",
+    image: "/images/projects/ImgSH.png",
+    githubURL: "https://github.com/Hassan-abdellah/OS-image-manager-UI",
+    websiteURL: "https://imagesh.netlify.app",
   },
   {
     id: "p2",
@@ -94,17 +94,17 @@ export const projects = [
   },
   {
     id: "p3",
+    name: "Expense Tracker",
+    image: "/images/projects/expense-tracker.jpg",
+    githubURL: "https://github.com/Hassan-abdellah/expenses-tracker",
+    websiteURL: "https://ex-trackers.netlify.app",
+  },
+  {
+    id: "p4",
     name: "Coffee & Desserts Store",
     image: "/images/projects/coffee-store.jpg",
     githubURL: "https://github.com/Hassan-abdellah/dessert-coffee-store",
     websiteURL: "https://coffee-desserts.netlify.app",
-  },
-  {
-    id: "p4",
-    name: "Browser Extensions Manager",
-    image: "/images/projects/browser-extensions.jpg",
-    githubURL: "https://github.com/Hassan-abdellah/browser-extensions-manager",
-    websiteURL: "https://browser-extensions-mnger.netlify.app",
   },
 ];
 
